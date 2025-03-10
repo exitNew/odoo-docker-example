@@ -3,7 +3,7 @@ services:
   odoo:
     image: odoo:18.0
     depends_on:
-      - pg-database
+      - postgres
     ports:
       - "8069:8069"
     volumes:
@@ -18,7 +18,7 @@ services:
       -- --dev=reload
       -d odoo-test
       -u all
-  pg-database:
+  postgres:
     image: postgres:15
     environment:
       - POSTGRES_DB=odoo-test

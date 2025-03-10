@@ -1,9 +1,9 @@
 version: '3.1'
 services:
-  odoo:
+  web:
     image: odoo:18.0
     depends_on:
-      - postgres
+      - db
     ports:
       - "8069:8069"
     volumes:
@@ -18,7 +18,7 @@ services:
       -- --dev=reload
       -d ${POSTGRES_DB}
       -u all
-  postgres:
+  db:
     image: postgres:15
     environment:
       - POSTGRES_DB=${POSTGRES_DB}

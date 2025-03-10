@@ -1,4 +1,4 @@
-# Odoo 16
+# Odoo
 
 Tested on Macbook ARM M1 processor, as per this commit.
 - Python 3.11.9

@@ -1,1 +1,2 @@
 secrets/pg_pass
+.env

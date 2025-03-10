@@ -16,14 +16,14 @@ services:
       - postgresql-password
     command: >
       -- --dev=reload
-      -d odoo-test
+      -d ${POSTGRES_DB}
       -u all
   postgres:
     image: postgres:15
     environment:
-      - POSTGRES_DB=odoo-test
+      - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql-password
-      - POSTGRES_USER=odoo
+      - POSTGRES_USER=${POSTGRES_USER}
       - PGDATA=/var/lib/postgresql/data/pgdata
     ports:
       - "54321:5432"
